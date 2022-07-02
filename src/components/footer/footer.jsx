@@ -23,7 +23,7 @@ export const Footer = () => {
                                 <a href="https://instagram.com.com" className="footer__link">Instagram</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Telegram</a>
+                                <a href="https://kun.uz" className="footer__link">Telegram</a>
                             </li>
                             <li className="footer__item">
                                 <a href="https://youtube.com" className="footer__link">YouTube</a>
@@ -37,16 +37,16 @@ export const Footer = () => {
                         <h2 className="footer__heading">WHAT I HAVE DONE:</h2>
                         <ul className="footer__list">
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Xalq Kutubxonasi</a>
+                                <a href="https://kun.uz" className="footer__link">Xalq Kutubxonasi</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Website</a>
+                                <a href="https://kun.uz" className="footer__link">Website</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Play Market</a>
+                                <a href="https://kun.uz" className="footer__link">Play Market</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">App Store</a>
+                                <a href="https://kun.uz" className="footer__link">App Store</a>
                             </li>
                         </ul>
                     </div>
@@ -56,13 +56,13 @@ export const Footer = () => {
                                 <a href="tel:936293242" className="footer__link">Contact</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Blog</a>
+                                <a href="https://kun.uz" className="footer__link">Blog</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Dribbble</a>
+                                <a href="https://kun.uz" className="footer__link">Dribbble</a>
                             </li>
                             <li className="footer__item">
-                                <a href="#" className="footer__link">Behance</a>
+                                <a href="https://kun.uz" className="footer__link">Behance</a>
                             </li>
                         </ul>
                     </div>

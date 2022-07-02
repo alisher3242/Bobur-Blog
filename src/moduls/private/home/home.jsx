@@ -15,7 +15,7 @@ export const Home = () => {
     const [posts, setPosts] = useState([])
     const [loading, setLoading] =useState(false)
     const [currentPage, setCurrent] = useState(1)
-    const [perPage, setPerPage] = useState(10)
+    const [perPage] = useState(10)
     useEffect(() => {
         setLoading(true)
         fetch("https://jsonplaceholder.typicode.com/posts")
@@ -46,22 +46,22 @@ export const Home = () => {
                     </ul>
                     <ul className="home__left-links">
                         <li className="home__left-link">
-                            <a href="https://facebook.com" target="_blank">
+                            <a href="https://facebook.com">
                             <img src={fb} alt="facebook icon" width={10} height={18}/>
                             </a>
                         </li>
                         <li className="home__left-link">
-                            <a href="https://github.com/alisher3242" target="_blank" >
+                            <a href="https://github.com/alisher3242" >
                             <img src={github} alt="github icon" width={20} height={20}/>
                             </a>
                         </li>
                         <li className="home__left-link">
-                            <a href="https://twitter.com" target="_blank">
+                            <a href="https://twitter.com">
                             <img src={twitter} alt="twitter icon" width={20} height={17}/>
                             </a>
                         </li>
                         <li className="home__left-link">
-                            <a href="https://linkedin.com" target="_blank">
+                            <a href="https://linkedin.com">
                             <img src={linkedin} alt="linkedin icon" width={17} height={17}/>
                             </a>
                         </li>
