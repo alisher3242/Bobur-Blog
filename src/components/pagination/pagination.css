@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     gap: 16px;
-    transform: translateX(100px)
 }
 
 .page-link {
@@ -24,7 +23,7 @@
 
 @media only screen and (max-width:860px) {
     .pagination {
-        gap: 7px;
+        gap: 5px;
     }
     .page-link {
         font-size: 14px;
