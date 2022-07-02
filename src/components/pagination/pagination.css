@@ -1,0 +1,33 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    transform: translateX(100px)
+}
+
+.page-link {
+    font-family: Roboto Mono;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #474747;
+    border: none;
+}
+
+.page-link:hover,
+.page-link:active {
+    color: #FFBA9D;
+    background-color: transparent;
+}
+
+@media only screen and (max-width:860px) {
+    .pagination {
+        gap: 7px;
+    }
+    .page-link {
+        font-size: 14px;
+        justify-content: flex-end;
+    }
+}
