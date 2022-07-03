@@ -72,7 +72,7 @@ export const Home = () => {
                     <ul className="home__right-list">
                         { loading ? <img src={loadingGif} alt="gif" /> :
                         currentPosts.map(post => (
-                            <Link key={post.id} className="home__right-single" to={"/" + post.id}>
+                            <Link key={post.id} className="home__right-single" to={"/posts/" + post.id}>
                             <li className="home__right-item">
                                 <div className="home__right-info">
                                     <p className="home__right-data">September 24.2020</p>

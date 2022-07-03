@@ -1,5 +1,5 @@
 import ok from "../../../images/five.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./single.css"
 import share from "../../../images/share.png";
 import singlePhoto from "../../../images/single.png";
@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 export const Single = () => {
     const [posts, setPosts] = useState([])
     const { id } = useParams()
-    const navigate = useNavigate()
     const [post, setPost] = useState([])
     const [currentPage] = useState(1)
     const [perPage] = useState(3)
@@ -31,9 +30,6 @@ export const Single = () => {
         .catch(err => console.log(err))
     }, [id])
 
-    const handleLink = (id) => {
-        navigate("/" + id)
-    }
 
   return (
     <div className="single">
@@ -97,7 +93,7 @@ export const Single = () => {
             <h3 className="single__right-heading">More like this</h3>
             <ul className="single__right-list">
                         {currentPosts.map(post => (
-                            <Link onClick={() => handleLink(post.id)} key={post.id} className="single__right-single" to={"/" + post.id}>
+                            <Link className="single__right-single" to={"/posts/" + post.id}>
                             <li className="single__right-item">
                                 <div className="single__right-info">
                                     <p className="single__right-dataa">September 24.2020</p>
