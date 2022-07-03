@@ -1,6 +1,5 @@
 import arrow from "../../../images/arrow.png"
 import fb from "../../../images/fb.png"
-import loadingGif from "../../../images/Spin-1s-200px.gif"
 import github from "../../../images/github.png"
 import twitter from "../../../images/twitter.png"
 import linkedin from "../../../images/in.png"
@@ -9,24 +8,24 @@ import "./home.css";
 import {Link} from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Pagination } from "../../../components/pagination/pagination"
+import { UseSearch } from "../../../hooks/UseSearch"
 
 
 export const Home = () => {
     const [posts, setPosts] = useState([])
-    const [loading, setLoading] =useState(false)
     const [currentPage, setCurrent] = useState(1)
     const [perPage] = useState(20)
     useEffect(() => {
-        setLoading(true)
         fetch("https://jsonplaceholder.typicode.com/posts")
         .then(res => res.json())
         .then(data => setPosts(data))
-        setLoading(false)
     }, [])
 
     const lastPost = currentPage * perPage;
     const firstPost = lastPost - perPage
     const currentPosts = posts.slice(firstPost, lastPost)
+
+    const { search } = UseSearch()
     
     const paginate = (pageNumber) => setCurrent(pageNumber)
 
@@ -70,8 +69,15 @@ export const Home = () => {
                 <div className="home__right">
                     <h3 className="home__right-heading">Recent Posts</h3>
                     <ul className="home__right-list">
-                        { loading ? <img src={loadingGif} alt="gif" /> :
-                        currentPosts.map(post => (
+                        { currentPosts &&
+                        currentPosts.filter(post => { 
+                            if (search === "") {
+                                return post
+                            } else if (post.title.toLowerCase().includes(search.toLowerCase())){
+                                return post
+                            }
+                            return false
+                        }).map(post => (
                             <Link key={post.id} className="home__right-single" to={"/posts/" + post.id}>
                             <li className="home__right-item">
                                 <div className="home__right-info">

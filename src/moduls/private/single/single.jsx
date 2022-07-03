@@ -93,7 +93,7 @@ export const Single = () => {
             <h3 className="single__right-heading">More like this</h3>
             <ul className="single__right-list">
                         {currentPosts.map(post => (
-                            <Link className="single__right-single" to={"/posts/" + post.id}>
+                            <Link key={post.id} className="single__right-single" to={"/posts/" + post.id}>
                             <li className="single__right-item">
                                 <div className="single__right-info">
                                     <p className="single__right-dataa">September 24.2020</p>

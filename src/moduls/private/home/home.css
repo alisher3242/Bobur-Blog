@@ -300,4 +300,7 @@
         font-size: 17px;
         max-width: 480px;
     }
+    .home__right-item:last-child {
+        margin-bottom: 30px;
+    }
 }

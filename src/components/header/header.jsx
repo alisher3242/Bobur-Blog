@@ -5,12 +5,24 @@ import search from "../../images/search.png"
 import "./header.css"
 import hamburger from "../../images/hamburger.png"
 import close from "../../images/close.png"
-import { useState } from "react"
+import { useRef, useState } from "react"
+import { UseSearch } from "../../hooks/UseSearch"
 export const Header = () => {
     const {token} = UseAuth()
     const [hamburgerBtn, setHamburgerBtn] = useState(false)
     const handleHamburger = () => {
         setHamburgerBtn(!hamburgerBtn)
+    }
+
+    const { setSearch } = UseSearch()
+    const searchRef = useRef(null)
+    const handleSearch = () => {
+        setSearch(searchRef.current.value)
+        searchRef.current.value = null
+    }
+
+    const handleNavLink = () => {
+        setHamburgerBtn(false)
     }
 
     return (
@@ -22,34 +34,34 @@ export const Header = () => {
             </Link>
             {token && (<ul className={`${hamburgerBtn ? "header__list" : "visible"}`}>
                 <li className="header__item">
-                    <Link className="header__item-link" to={"/"}>
+                    <Link onClick={handleNavLink} className="header__item-link" to={"/"}>
                     All
                     </Link>
                 </li>
                 <li className="header__item">
-                    <Link className="header__item-link" to={"/design-theory"}>
+                    <Link onClick={handleNavLink} className="header__item-link" to={"/design-theory"}>
                     Design Theory
                     </Link>
                 </li>
                 <li className="header__item">
-                    <Link className="header__item-link" to={"/ux"}>
+                    <Link onClick={handleNavLink} className="header__item-link" to={"/ux"}>
                     UX
                     </Link>
                 </li>
                 <li className="header__item">
-                    <Link className="header__item-link" to={"/ui"}>
+                    <Link onClick={handleNavLink} className="header__item-link" to={"/ui"}>
                     UI
                     </Link>
                 </li>
                 <li className="header__item">
-                    <Link className="header__item-link" to={"/typography"}>
+                    <Link onClick={handleNavLink} className="header__item-link" to={"/typography"}>
                     Typography
                     </Link>
                 </li>
             </ul>)}
             {token && (<div className="header__search">
-                <input type="text" placeholder="Search" className="search__input" />
-                <button className="search__img">
+                <input ref={searchRef} type="text" placeholder="Search" className="search__input" />
+                <button onClick={handleSearch} className="search__img">
                 <img src={search} alt="search icon" width={16} height={16} className="search-icon" />
                 </button>
             </div>)}
