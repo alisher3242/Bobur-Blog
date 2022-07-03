@@ -15,7 +15,7 @@ export const Home = () => {
     const [posts, setPosts] = useState([])
     const [loading, setLoading] =useState(false)
     const [currentPage, setCurrent] = useState(1)
-    const [perPage] = useState(10)
+    const [perPage] = useState(20)
     useEffect(() => {
         setLoading(true)
         fetch("https://jsonplaceholder.typicode.com/posts")
@@ -72,7 +72,7 @@ export const Home = () => {
                     <ul className="home__right-list">
                         { loading ? <img src={loadingGif} alt="gif" /> :
                         currentPosts.map(post => (
-                            <Link key={post.id} className="home__right-single" to={"/single"}>
+                            <Link key={post.id} className="home__right-single" to={"/" + post.id}>
                             <li className="home__right-item">
                                 <div className="home__right-info">
                                     <p className="home__right-data">September 24.2020</p>

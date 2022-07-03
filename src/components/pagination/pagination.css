@@ -13,6 +13,7 @@
     text-align: left;
     color: #474747;
     border: none;
+    background-color: transparent;
 }
 
 .page-link:hover,
