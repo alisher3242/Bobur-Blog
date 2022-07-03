@@ -9,8 +9,7 @@ import { useParams } from "react-router-dom";
 
 export const Single = () => {
     const [posts, setPosts] = useState([])
-    const param = useParams()
-    const id = param.id
+    const { id } = useParams()
     const navigate = useNavigate()
     const [post, setPost] = useState([])
     const [currentPage] = useState(1)
@@ -30,7 +29,7 @@ export const Single = () => {
         .then(res => res.json())
         .then(data => setPosts(data))
         .catch(err => console.log(err))
-    }, [])
+    }, [id])
 
     const handleLink = (id) => {
         navigate("/" + id)
