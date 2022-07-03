@@ -1,5 +1,5 @@
 import ok from "../../../images/five.png";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./single.css"
 import share from "../../../images/share.png";
 import singlePhoto from "../../../images/single.png";
