@@ -1,12 +1,15 @@
 .footer {
     background-color: #000;
-    padding-bottom: 45px;
 }
 
 .footer__container {
+    padding-bottom: 45px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    background-image: url(../../images/footer-bg.png);
+    background-repeat: no-repeat;
+    background-position: -180px -239px;
 }
 
 .footer__logo-link {
@@ -168,6 +171,9 @@
 @media only screen and (max-width:660px) {
     .footer__container {
         flex-direction: column;
+        background-position: center;
+        background-size: 596px 608px;
+        ;
     }
     .footer__left {
         margin-bottom: 40px;
